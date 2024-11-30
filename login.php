@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['role'] = $user['role'];
 
-            header('Location: appointments.php');
+            header('Location: index.php');
             exit;
         } else {
             $error_message = "Invalid password. Please try again.";

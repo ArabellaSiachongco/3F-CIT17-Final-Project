@@ -1,18 +1,42 @@
 <?php
-include 'db.php'; 
+session_start();
+include 'db.php';
 
 $errors = [];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+// Ensure user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
 
-    $user_id = 1; 
+// Fetch the user_id and role
+$user_id = $_SESSION['user_id'];
+
+$stmt = $conn->prepare("SELECT role FROM users WHERE user_id = ?");
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 0) {
+    die('User not found.');
+}
+
+$user = $result->fetch_assoc();
+if ($user['role'] !== 'customer') {
+    die('Only customers can book appointments.');
+}
+
+$stmt->close();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $therapist_id = $_POST['therapist_id']; 
     $service_id = $_POST['service_id'];
     $appointment_date = $_POST['appointment_date'];
     $start_time = $_POST['start_time'];
     $end_time = $_POST['end_time'];
     $payment_method = $_POST['payment_method'];
-    $promo_code = $_POST['promo_code'] ?? ''; 
+    $promo_code = $_POST['promo_code'] ?? '';
 
     // Default discount
     $discount = 0;
@@ -23,13 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        // Insert into the Appointments table
+        // Insert into Appointments table
         $stmt = $conn->prepare("INSERT INTO appointments (user_id, therapist_id, service_id, appointment_date, start_time, end_time, promo_code) 
                                 VALUES (?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("iiissss", $user_id, $therapist_id, $service_id, $appointment_date, $start_time, $end_time, $promo_code);
 
         if ($stmt->execute()) {
-            $appointment_id = $stmt->insert_id; 
+            $appointment_id = $stmt->insert_id;
         } else {
             $errors[] = "Failed to book the appointment.";
             echo "Error: " . $stmt->error;
@@ -37,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
         $stmt->close();
+
 
         //  Promo Code
         if (!empty($promo_code)) {
