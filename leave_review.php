@@ -60,8 +60,125 @@ if ($appointment_id) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leave a Review</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f3e5;  /* Light cream background */
+    color: #4b3c2d;  /* Dark brown text */
+}
+
+header {
+    background-color: #6f4f2f;  /* Coffee brown */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #4b3c2d;  /* Dark brown footer */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h2 {
+    color: #6f4f2f;  /* Coffee brown */
+}
+
+h3 {
+    color: #4b3c2d;  /* Dark brown */
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+select, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+select:focus, textarea:focus, button:focus {
+    border-color: #6f4f2f;  /* Dark brown focus border */
+    outline: none;
+}
+
+button {
+    background-color: #6f4f2f;  /* Coffee brown */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4b3c2d;  /* Darker brown on hover */
+}
+
+textarea {
+    resize: vertical;
+}
+
+p {
+    margin-top: 15px;
+}
+
+</style>
 <body>
 
 <header>
@@ -108,10 +225,10 @@ if ($appointment_id) {
         <p>Appointment not found. Please make sure you've selected a valid appointment.</p>
     <?php endif; ?>
 </main>
-
+<!-- 
 <footer>
     <p>&copy; 2024 Booking System</p>
-</footer>
+</footer> -->
 
 </body>
 </html>

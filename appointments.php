@@ -69,65 +69,64 @@ $past_appointments = $past_stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Appointments</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;">
 
-<header>
+<header style="background-color: #333; color: white; padding: 10px 0; text-align: center;">
     <h1>Your Appointments</h1>
     <nav>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="services.php">Services</a></li>
-            <li><a href="appointments.php">Appointments</a></li>
-            <li><a href="users.php">Users</a></li>
+        <ul style="list-style: none; text-align: center; padding: 0;">
+            <li style="display: inline; margin-right: 20px;"><a href="index.php" style="color: white; text-decoration: none;">Home</a></li>
+            <li style="display: inline; margin-right: 20px;"><a href="services.php" style="color: white; text-decoration: none;">Services</a></li>
+            <li style="display: inline; margin-right: 20px;"><a href="appointments.php" style="color: white; text-decoration: none;">Appointments</a></li>
+            <li style="display: inline; margin-right: 20px;"><a href="users.php" style="color: white; text-decoration: none;">Users</a></li>
             <?php if (!isset($_SESSION['user_id'])): ?>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="register.php">Register</a></li>
+                <li style="display: inline; margin-right: 20px;"><a href="login.php" style="color: white; text-decoration: none;">Login</a></li>
+                <li style="display: inline;"><a href="register.php" style="color: white; text-decoration: none;">Register</a></li>
             <?php else: ?>
-                <li><a href="logout.php">Logout</a></li>
+                <li style="display: inline; margin-right: 20px;"><a href="logout.php" style="color: white; text-decoration: none;">Logout</a></li>
             <?php endif; ?>
         </ul>
     </nav>
 </header>
 
-<main>
+<main style="padding: 20px;">
     <?php if (isset($success_message)): ?>
         <p style="color: green;"><?php echo $success_message; ?></p>
     <?php elseif (isset($error_message)): ?>
         <p style="color: red;"><?php echo $error_message; ?></p>
     <?php endif; ?>
 
-    <h2>Upcoming Appointments</h2>
+    <h2 style="color: #333;">Upcoming Appointments</h2>
     <?php if ($upcoming_appointments->num_rows > 0): ?>
-        <ul>
+        <ul style="list-style: none; padding: 0;">
             <?php while ($appointment = $upcoming_appointments->fetch_assoc()): ?>
-                <li>
+                <li style="background-color: white; padding: 10px; margin: 10px 0; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                     <strong>Service:</strong> <?php echo htmlspecialchars($appointment['service_name']); ?><br>
                     <strong>Therapist:</strong> <?php echo htmlspecialchars($appointment['therapist_name']); ?><br>
                     <strong>Date:</strong> <?php echo htmlspecialchars($appointment['appointment_date']); ?><br>
                     <strong>Time:</strong> <?php echo htmlspecialchars($appointment['start_time'] . " - " . $appointment['end_time']); ?><br>
-                    
+
                     <!-- Cancel Button -->
-                    <button class="cancel-btn" data-id="<?php echo $appointment['appointment_id']; ?>">Cancel</button>
+                    <button class="cancel-btn" data-id="<?php echo $appointment['appointment_id']; ?>" style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; cursor: pointer;">Cancel</button>
                     
                     <!-- Reschedule Button -->
-                    <button class="reschedule-btn" data-id="<?php echo $appointment['appointment_id']; ?>">Reschedule</button>
+                    <button class="reschedule-btn" data-id="<?php echo $appointment['appointment_id']; ?>" style="background-color: #3498db; color: white; border: none; padding: 5px 10px; cursor: pointer;">Reschedule</button>
                     
                     <!-- Reschedule Form (Initially Hidden) -->
-                    <div class="reschedule-form" id="reschedule-form-<?php echo $appointment['appointment_id']; ?>" style="display: none;">
+                    <div class="reschedule-form" id="reschedule-form-<?php echo $appointment['appointment_id']; ?>" style="display: none; margin-top: 10px; background-color: #f9f9f9; padding: 15px; border-radius: 5px;">
                         <form action="appointments.php" method="POST">
                             <input type="hidden" name="appointment_id" value="<?php echo $appointment['appointment_id']; ?>">
                             <input type="hidden" name="action" value="reschedule">
                             
-                            <label for="new_date">New Date:</label>
-                            <input type="date" name="new_date" required><br>
-                            <label for="new_start_time">New Start Time:</label>
-                            <input type="time" name="new_start_time" required><br>
-                            <label for="new_end_time">New End Time:</label>
-                            <input type="time" name="new_end_time" required><br>
+                            <label for="new_date" style="display: block; margin-bottom: 5px;">New Date:</label>
+                            <input type="date" name="new_date" required style="padding: 5px; margin-bottom: 10px; width: 100%;"><br>
+                            <label for="new_start_time" style="display: block; margin-bottom: 5px;">New Start Time:</label>
+                            <input type="time" name="new_start_time" required style="padding: 5px; margin-bottom: 10px; width: 100%;"><br>
+                            <label for="new_end_time" style="display: block; margin-bottom: 5px;">New End Time:</label>
+                            <input type="time" name="new_end_time" required style="padding: 5px; margin-bottom: 10px; width: 100%;"><br>
                             
-                            <button type="submit">Reschedule</button>
+                            <button type="submit" style="background-color: #2ecc71; color: white; padding: 10px 20px; border: none; cursor: pointer;">Reschedule</button>
                         </form>
                     </div>
                 </li>
@@ -137,11 +136,11 @@ $past_appointments = $past_stmt->get_result();
         <p>No upcoming appointments found.</p>
     <?php endif; ?>
 
-    <h2>Past Appointments</h2>
+    <h2 style="color: #333;">Past Appointments</h2>
     <?php if ($past_appointments->num_rows > 0): ?>
-        <ul>
+        <ul style="list-style: none; padding: 0;">
             <?php while ($appointment = $past_appointments->fetch_assoc()): ?>
-                <li>
+                <li style="background-color: white; padding: 10px; margin: 10px 0; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                     <strong>Service:</strong> <?php echo htmlspecialchars($appointment['service_name']); ?><br>
                     <strong>Therapist:</strong> <?php echo htmlspecialchars($appointment['therapist_name']); ?><br>
                     <strong>Date:</strong> <?php echo htmlspecialchars($appointment['appointment_date']); ?><br>
@@ -152,7 +151,7 @@ $past_appointments = $past_stmt->get_result();
                         <strong>Review:</strong> <?php echo htmlspecialchars($appointment['comment']); ?><br>
                     <?php else: ?>
                         <a href="leave_review.php?appointment_id=<?php echo $appointment['appointment_id']; ?>">
-                            <button>Leave a Review</button>
+                            <button style="background-color: #f39c12; color: white; padding: 5px 10px; cursor: pointer;">Leave a Review</button>
                         </a>
                     <?php endif; ?>
                 </li>
@@ -163,7 +162,7 @@ $past_appointments = $past_stmt->get_result();
     <?php endif; ?>
 </main>
 
-<footer>
+<footer style="background-color: #333; color: white; text-align: center; padding: 10px;">
     <p>&copy; 2024 Booking System</p>
 </footer>
 

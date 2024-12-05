@@ -81,8 +81,156 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['change_password'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f1f5f9; /* Light grayish background */
+    color: #333; /* Dark text */
+}
+
+header {
+    background-color: #003366; /* Dark Blue */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #003366; /* Dark Blue */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #003366; /* Dark Blue */
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #003366; /* Dark Blue */
+    margin-bottom: 10px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #003366; /* Dark Blue */
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #003366; /* Dark Blue focus border */
+    outline: none;
+}
+
+button {
+    background-color: #003366; /* Dark Blue */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #002244; /* Slightly darker blue on hover */
+}
+
+p {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Message styles */
+p.success {
+    color: green;
+}
+
+p.error {
+    color: red;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    section {
+        margin-bottom: 20px;
+    }
+
+    form {
+        gap: 10px;
+    }
+}
+</style>
 <body>
 
 <header>

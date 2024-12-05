@@ -34,8 +34,209 @@ $past_appointments = $past_query->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header & Footer */
+header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Main Layout */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sections */
+section {
+    margin-bottom: 30px;
+}
+
+/* User Info */
+.user-info {
+    background-color: #eef2f7;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.user-info h2 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.user-info p {
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+/* Appointments */
+.appointments h2 {
+    font-size: 1.7em;
+    margin-bottom: 10px;
+}
+
+.appointments ul {
+    list-style: none;
+    padding: 0;
+}
+
+.appointments li {
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.appointments strong {
+    font-weight: bold;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.cancel-btn {
+    background-color: #e74c3c;
+}
+
+.cancel-btn:hover {
+    background-color: #c0392b;
+}
+
+.reschedule-btn {
+    background-color: #f39c12;
+}
+
+.reschedule-btn:hover {
+    background-color: #e67e22;
+}
+
+.review-btn {
+    background-color: #2ecc71;
+}
+
+.review-btn:hover {
+    background-color: #27ae60;
+}
+
+/* Account Settings */
+.account-settings form {
+    background-color: #eef2f7;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.account-settings label {
+    display: block;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+.account-settings input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.account-settings button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.account-settings button:hover {
+    background-color: #2980b9;
+}
+
+/* Password Change Section */
+.account-settings h3 {
+    font-size: 1.5em;
+    margin-top: 30px;
+}
+
+.account-settings input[type="password"] {
+    margin-bottom: 15px;
+}
+
+/* Promotions Section */
+.promotions {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.promotions h2 {
+    font-size: 1.7em;
+    margin-bottom: 10px;
+}
+
+.promotions p {
+    font-size: 1.2em;
+    color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .appointments li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+</style>
 <body>
 <?php include 'includes/header.php'; ?>
 

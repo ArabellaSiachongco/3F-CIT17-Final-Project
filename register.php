@@ -7,6 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = mysqli_real_escape_string($conn, trim($_POST['email']));
     $phone_number = mysqli_real_escape_string($conn, trim($_POST['phone_number']));
     $password = trim($_POST['password']); // Plain text password input from the form
+    $role = mysqli_real_escape_string($conn, trim($_POST['role'])); // Capture selected role
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -19,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($result->num_rows > 0) {
         $error_message = "An account with this email already exists.";
     } else {
-        $query = "INSERT INTO users (full_name, email, phone_number, password, role) VALUES (?, ?, ?, ?, 'customer')";
+        $query = "INSERT INTO users (full_name, email, phone_number, password, role) VALUES (?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param('ssss', $full_name, $email, $phone_number, $hashed_password);
+        $stmt->bind_param('sssss', $full_name, $email, $phone_number, $hashed_password, $role);
 
         if ($stmt->execute()) {
             header('Location: login.php');
@@ -33,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $stmt->close();
 }
+
 ?>
 
 <!-- HTML Form to Register a User -->
@@ -44,6 +46,140 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>User Registration</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f1f5f9; /* Light grayish background */
+    color: #333; /* Dark text */
+}
+
+header {
+    background-color: #003366; /* Dark Blue */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #003366; /* Dark Blue */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+main {
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #003366; /* Dark Blue */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #003366; /* Dark Blue */
+}
+
+input[type="text"], input[type="email"], input[type="password"], select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, select:focus {
+    border-color: #003366; /* Dark Blue focus border */
+    outline: none;
+}
+
+button {
+    background-color: #003366; /* Dark Blue */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #002244; /* Slightly darker blue on hover */
+}
+
+footer p {
+    font-size: 14px;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    form {
+        gap: 10px;
+    }
+}
+
+</style>
 <body>
 
 <header>
