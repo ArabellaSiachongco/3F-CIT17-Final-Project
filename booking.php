@@ -130,111 +130,127 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <style>
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Georgia', serif;
+    background-color: #f5ebe0; /* Coffee cream */
     margin: 0;
     padding: 0;
 }
 
 /* Header Styles */
 header {
-    background-color: #333;
-    color: white;
+    background-color: #6f4e37; /* Coffee brown */
+    color: #fff7e6; /* Creamy white */
     padding: 15px 0;
     text-align: center;
 }
 
 header h1 {
     margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
 }
 
 /* Navigation Styles */
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 10px 0 0;
     text-align: center;
 }
 
 nav ul li {
     display: inline-block;
-    margin-right: 20px;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: white;
+    color: #fff7e6;
     text-decoration: none;
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 5px 15px;
     border-radius: 3px;
+    font-size: 1em;
 }
 
 nav ul li a:hover {
-    background-color: #444;
+    background-color: #3e2723; /* Dark espresso */
+    color: #ffffff; /* Bright contrast */
 }
 
 /* Form Styles */
 form {
     max-width: 600px;
-    margin: 20px auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    background-color: #fff7e6; /* Light cream */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 form h2 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     margin-bottom: 15px;
+    color: #3e2723; /* Espresso */
 }
 
 label {
     display: block;
     margin: 10px 0 5px;
+    font-weight: bold;
+    color: #6f4e37; /* Coffee brown */
 }
 
 input, select {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #d1c4b1; /* Soft coffee border */
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Georgia', serif;
+    background-color: #fefcf9; /* Cream background */
+}
+
+input:focus, select:focus {
+    border-color: #6f4e37; /* Highlight in coffee brown */
+    outline: none;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
+    padding: 12px 20px;
+    background-color: #6f4e37; /* Coffee brown */
+    color: #fff7e6; /* Creamy white */
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.1em;
     width: 100%;
+    font-family: 'Georgia', serif;
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #3e2723; /* Dark espresso */
 }
 
 /* Error Messages */
 .error-messages {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 10px;
-    border-radius: 5px;
+    background-color: #f8e4d9; /* Light coffee blush */
+    color: #8b3a2e; /* Deep coffee red */
+    padding: 15px;
+    border-radius: 8px;
     margin-top: 20px;
-}
-
-.error {
-    margin: 5px 0;
+    font-weight: bold;
 }
 
 /* Footer Styles */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #3e2723; /* Dark espresso */
+    color: #fff7e6; /* Cream */
     text-align: center;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 15px;
+    margin-top: 30px;
+    font-family: 'Georgia', serif;
+    font-size: 0.9em;
 }
 </style>
 <body>

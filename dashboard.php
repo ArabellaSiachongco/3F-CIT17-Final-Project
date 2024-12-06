@@ -37,16 +37,19 @@ $past_appointments = $past_query->get_result();
 </head>
 <style>
 /* General Styles */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f3e5; /* Light cream background */
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+    color: #4b3c2d; /* Dark brown text */
 }
 
 /* Header & Footer */
 header, footer {
-    background-color: #333;
+    background-color: #6f4f2f; /* Coffee brown */
     color: white;
     text-align: center;
     padding: 15px;
@@ -61,9 +64,9 @@ main {
     max-width: 1200px;
     margin: 30px auto;
     padding: 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* White card background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Sections */
@@ -73,26 +76,29 @@ section {
 
 /* User Info */
 .user-info {
-    background-color: #eef2f7;
+    background-color: #fdf9f3; /* Light cream */
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .user-info h2 {
     margin: 0;
-    font-size: 1.8em;
+    font-size: 2rem;
+    color: #6f4f2f;
 }
 
 .user-info p {
-    font-size: 1.1em;
+    font-size: 1.2rem;
     margin-top: 10px;
 }
 
 /* Appointments */
 .appointments h2 {
-    font-size: 1.7em;
-    margin-bottom: 10px;
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    color: #6f4f2f;
 }
 
 .appointments ul {
@@ -101,36 +107,42 @@ section {
 }
 
 .appointments li {
-    padding: 10px;
-    background-color: #f9f9f9;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    padding: 15px;
+    background-color: #fdf9f3; /* Light cream */
+    margin-bottom: 15px;
+    border-radius: 10px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .appointments strong {
     font-weight: bold;
+    color: #4b3c2d;
 }
 
+/* Buttons */
 button {
-    padding: 8px 15px;
-    background-color: #3498db;
+    padding: 10px 15px;
+    background-color: #6f4f2f; /* Coffee brown */
     color: white;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1rem;
     margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #4b3c2d; /* Darker brown on hover */
+    transform: scale(1.05);
 }
 
 .cancel-btn {
-    background-color: #e74c3c;
+    background-color: #e74c3c; /* Red for cancel */
 }
 
 .cancel-btn:hover {
@@ -138,7 +150,7 @@ button:hover {
 }
 
 .reschedule-btn {
-    background-color: #f39c12;
+    background-color: #f39c12; /* Amber for reschedule */
 }
 
 .reschedule-btn:hover {
@@ -146,7 +158,7 @@ button:hover {
 }
 
 .review-btn {
-    background-color: #2ecc71;
+    background-color: #2ecc71; /* Green for review */
 }
 
 .review-btn:hover {
@@ -155,66 +167,69 @@ button:hover {
 
 /* Account Settings */
 .account-settings form {
-    background-color: #eef2f7;
+    background-color: #fdf9f3; /* Light cream */
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .account-settings label {
     display: block;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     margin-top: 10px;
+    color: #4b3c2d;
 }
 
 .account-settings input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-top: 5px;
-    border-radius: 3px;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 1em;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #4b3c2d;
 }
 
 .account-settings button {
     width: 100%;
     padding: 12px;
-    background-color: #3498db;
+    background-color: #6f4f2f; /* Coffee brown */
     color: white;
     border: none;
-    border-radius: 3px;
-    font-size: 1.2em;
+    border-radius: 5px;
+    font-size: 1.2rem;
     margin-top: 20px;
 }
 
 .account-settings button:hover {
-    background-color: #2980b9;
+    background-color: #4b3c2d;
 }
 
 /* Password Change Section */
 .account-settings h3 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     margin-top: 30px;
-}
-
-.account-settings input[type="password"] {
-    margin-bottom: 15px;
+    color: #6f4f2f;
 }
 
 /* Promotions Section */
 .promotions {
-    background-color: #f9f9f9;
+    background-color: #fdf9f3; /* Light cream */
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .promotions h2 {
-    font-size: 1.7em;
+    font-size: 1.7rem;
     margin-bottom: 10px;
+    color: #6f4f2f;
 }
 
 .promotions p {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     color: #888;
 }
 
@@ -235,7 +250,6 @@ button:hover {
         margin-top: 10px;
     }
 }
-
 </style>
 <body>
 <?php include 'includes/header.php'; ?>

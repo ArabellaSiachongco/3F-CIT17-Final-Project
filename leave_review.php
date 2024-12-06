@@ -63,6 +63,7 @@ if ($appointment_id) {
 </head>
 <style>
 /* Global Styles */
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -70,112 +71,149 @@ if ($appointment_id) {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Modern font for a clean look */
+    background-color: #f7e8d5;  /* Light beige for a coffee-inspired backdrop */
+    color: #4a3625;  /* Rich brown for text */
     line-height: 1.6;
-    background-color: #f9f3e5;  /* Light cream background */
-    color: #4b3c2d;  /* Dark brown text */
 }
 
 header {
-    background-color: #6f4f2f;  /* Coffee brown */
+    background-color: #5c3d2e;  /* Warm coffee brown */
     color: #fff;
-    padding: 20px 0;
+    padding: 15px 0;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    margin-bottom: 10px;
+    font-size: 2em;
+    margin-bottom: 5px;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #7d5742;  /* Lighter coffee brown hover */
+    border-radius: 5px;
 }
 
 footer {
-    background-color: #4b3c2d;  /* Dark brown footer */
+    background-color: #4a3625;  /* Darker brown */
     color: #fff;
     text-align: center;
     padding: 10px 0;
     position: fixed;
-    width: 100%;
     bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
 }
 
+/* Main Content */
 main {
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #6f4f2f;  /* Coffee brown */
+    color: #5c3d2e; /* Coffee brown */
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    text-align: center;
 }
 
 h3 {
-    color: #4b3c2d;  /* Dark brown */
+    color: #4a3625;
+    font-size: 1.5em;
     margin-bottom: 10px;
 }
 
+p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
 label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #4a3625;
 }
 
 select, textarea, button {
     width: 100%;
     padding: 10px;
+    font-size: 1em;
     margin-bottom: 15px;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
 }
 
-select:focus, textarea:focus, button:focus {
-    border-color: #6f4f2f;  /* Dark brown focus border */
-    outline: none;
-}
-
-button {
-    background-color: #6f4f2f;  /* Coffee brown */
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #4b3c2d;  /* Darker brown on hover */
+select {
+    background-color: #f9f1e6; /* Soft cream background */
 }
 
 textarea {
     resize: vertical;
+    background-color: #f9f1e6;
 }
 
-p {
-    margin-top: 15px;
+select:focus, textarea:focus, button:focus {
+    border-color: #5c3d2e;
+    outline: none;
+    background-color: #f4e5d3; /* Subtle highlight */
+}
+
+button {
+    background-color: #5c3d2e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #7d5742; /* Lighter brown */
+    transform: scale(1.02); /* Slight pop effect */
+}
+
+button:active {
+    transform: scale(0.98); /* Subtle click effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 }
 
 </style>

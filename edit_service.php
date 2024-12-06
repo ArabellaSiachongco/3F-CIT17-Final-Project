@@ -68,35 +68,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <style>
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f3e5; /* Light cream background */
+    color: #4b3c2d; /* Dark brown text */
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 /* Container */
 .container {
-    width: 80%;
-    max-width: 900px;
+    width: 90%;
+    max-width: 800px;
     margin: 30px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    background-color: #fff; /* White background for the form */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
 }
 
 /* Heading */
 h1 {
     text-align: center;
-    font-size: 2em;
+    font-size: 2rem;
+    color: #6f4f2f; /* Coffee brown */
     margin-bottom: 20px;
 }
 
 /* Error Message */
-div[style="color: red;"] {
-    color: red;
-    font-size: 1.2em;
-    margin-bottom: 20px;
+.error-message {
+    color: #a94442; /* Muted red for errors */
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 /* Form Styles */
@@ -108,20 +113,23 @@ form {
 
 /* Labels */
 label {
-    font-size: 1.1em;
+    font-size: 1rem;
     font-weight: bold;
+    color: #6f4f2f; /* Coffee brown */
 }
 
 /* Inputs and Textarea */
 input[type="text"],
 input[type="number"],
 textarea {
-    padding: 10px;
-    font-size: 1em;
+    padding: 12px;
+    font-size: 1rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
     margin-top: 5px;
     width: 100%;
+    background-color: #fdf9f3; /* Light cream for subtle contrast */
+    color: #4b3c2d; /* Dark brown for text */
 }
 
 input[type="number"] {
@@ -137,26 +145,34 @@ textarea {
 /* Button */
 button {
     padding: 12px 20px;
-    background-color: #3498db;
+    background-color: #6f4f2f; /* Coffee brown */
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-    width: 200px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     align-self: center;
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #4b3c2d; /* Darker brown on hover */
+    transform: scale(1.02); /* Slight zoom for interactivity */
+}
+
+button:active {
+    transform: scale(0.98); /* Click effect */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        padding: 15px;
-        margin: 10px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
     }
 
     button {

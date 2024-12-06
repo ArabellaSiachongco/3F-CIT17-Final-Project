@@ -83,7 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['change_password'])) {
     <title>Users</title>
 </head>
 <style>
-
 /* Global Styles */
 * {
     margin: 0;
@@ -94,12 +93,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['change_password'])) {
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f1f5f9; /* Light grayish background */
-    color: #333; /* Dark text */
+    background-color: #F4E1D2; /* Light coffee background */
+    color: #3E2723; /* Dark coffee text */
 }
 
 header {
-    background-color: #003366; /* Dark Blue */
+    background-color: #6D4C41; /* Coffee brown */
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -131,7 +130,7 @@ nav ul li a:hover {
 }
 
 footer {
-    background-color: #003366; /* Dark Blue */
+    background-color: #6D4C41; /* Coffee brown */
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -150,12 +149,12 @@ main {
 }
 
 h2 {
-    color: #003366; /* Dark Blue */
+    color: #6D4C41; /* Coffee brown */
     margin-bottom: 20px;
 }
 
 h3 {
-    color: #003366; /* Dark Blue */
+    color: #6D4C41; /* Coffee brown */
     margin-bottom: 10px;
 }
 
@@ -171,7 +170,7 @@ form {
 
 label {
     font-weight: bold;
-    color: #003366; /* Dark Blue */
+    color: #6D4C41; /* Coffee brown */
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
@@ -183,12 +182,12 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
-    border-color: #003366; /* Dark Blue focus border */
+    border-color: #6D4C41; /* Coffee brown focus border */
     outline: none;
 }
 
 button {
-    background-color: #003366; /* Dark Blue */
+    background-color: #6D4C41; /* Coffee brown */
     color: white;
     border: none;
     padding: 12px 20px;
@@ -199,7 +198,7 @@ button {
 }
 
 button:hover {
-    background-color: #002244; /* Slightly darker blue on hover */
+    background-color: #5D4037; /* Slightly darker brown on hover */
 }
 
 p {
@@ -209,11 +208,11 @@ p {
 
 /* Message styles */
 p.success {
-    color: green;
+    color: #4CAF50; /* Green for success */
 }
 
 p.error {
-    color: red;
+    color: #D32F2F; /* Red for error */
 }
 
 /* Responsive styles */

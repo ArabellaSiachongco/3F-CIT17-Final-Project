@@ -136,75 +136,102 @@ $bookings_result = $conn->query($bookings_query);
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7fa;
+            background-color: #f7f0e6; /* Coffee cream background */
+            color: #4e342e; /* Coffee brown text */
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+
         h1, h2, h3 {
-            color: #333;
+            color: #3e2723; /* Dark coffee brown */
         }
+
         nav {
             margin: 20px 0;
+            background-color: #d7ccc8; /* Light mocha */
+            padding: 10px;
+            border-radius: 5px;
         }
+
         nav a {
             margin-right: 15px;
-            color: #007bff;
+            color: #5d4037; /* Medium coffee brown */
             text-decoration: none;
         }
+
         nav a:hover {
             text-decoration: underline;
+            color: #3e2723; /* Dark coffee brown on hover */
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
         }
+
         th, td {
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #d7ccc8; /* Light mocha borders */
             text-align: left;
         }
+
         th {
-            background-color: #007bff;
-            color: white;
+            background-color: #6d4c41; /* Rich coffee brown */
+            color: #ffffff; /* White text */
         }
+
         .message {
             padding: 10px;
             margin-bottom: 20px;
+            border-radius: 5px;
         }
+
         .success {
-            background-color: #d4edda;
-            color: #155724;
+            background-color: #d7ffd9; /* Light green for success */
+            color: #2e7d32; /* Dark green text */
         }
+
         .error {
-            background-color: #f8d7da;
-            color: #721c24;
+            background-color: #ffebee; /* Light red for errors */
+            color: #c62828; /* Dark red text */
         }
+
         form input, form select, form textarea, form button {
             padding: 10px;
             margin: 10px 0;
             width: 100%;
             box-sizing: border-box;
+            border: 1px solid #d7ccc8; /* Light mocha border */
+            border-radius: 5px;
+            background-color: #f7f0e6; /* Coffee cream background */
+            color: #4e342e; /* Coffee brown text */
         }
+
         form button {
-            background-color: #007bff;
+            background-color: #6d4c41; /* Rich coffee brown */
             color: white;
             border: none;
             cursor: pointer;
+            font-weight: bold;
         }
+
         form button:hover {
-            background-color: #0056b3;
+            background-color: #5d4037; /* Slightly darker brown */
         }
+
         .calendar {
             display: flex;
             flex-wrap: wrap;
         }
+
         .calendar-day {
             width: 200px;
             height: 150px;
@@ -212,13 +239,22 @@ $bookings_result = $conn->query($bookings_query);
             text-align: center;
             padding: 10px;
             margin: 10px;
-            background-color: #f9f9f9;
+            background-color: #ffe0b2; /* Light coffee foam */
         }
+
         .calendar-day p {
             margin: 5px 0;
+            color: #4e342e; /* Coffee brown text */
         }
+
         .chart-container {
             margin-top: 40px;
+        }
+
+        /* Add shadows and rounded corners for a more modern touch */
+        table, .calendar-day, form button, nav {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            border-radius: 5px;
         }
     </style>
 </head>

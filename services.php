@@ -61,11 +61,12 @@ $result = $conn->query($query);
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #4b3c2d; /* Dark brown text */
+    color: #4e3629; /* Coffee brown text */
+    background-color: #f1e4d8; /* Light coffee background */
 }
 
 header {
-    background-color: #003366; /* Dark blue header */
+    background-color: #3e2723; /* Dark brown header */
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -73,6 +74,7 @@ header {
 
 header h1 {
     margin-bottom: 10px;
+    font-size: 2rem;
 }
 
 nav ul {
@@ -97,7 +99,7 @@ nav ul li a:hover {
 }
 
 footer {
-    background-color: #003366; /* Dark blue footer */
+    background-color: #3e2723; /* Dark brown footer */
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -110,19 +112,20 @@ main {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #fff; /* White background for content */
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
 
 h2 {
-    color: #003366; /* Dark blue */
+    color: #3e2723; /* Dark brown */
     margin-bottom: 20px;
+    font-size: 1.8rem;
 }
 
 h3 {
-    color: #4b3c2d; /* Dark brown */
+    color: #3e2723; /* Dark brown */
 }
 
 .service-filters {
@@ -130,6 +133,7 @@ h3 {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
+    background-color: #f8f0e3; /* Light coffee background */
 }
 
 .filter-group {
@@ -140,7 +144,7 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: black; /* White label text */
+    color: #3e2723; /* Dark brown text for labels */
 }
 
 select {
@@ -153,12 +157,12 @@ select {
 }
 
 select:focus {
-    border-color: #003366; /* Dark blue focus border */
+    border-color: #3e2723; /* Dark brown focus border */
     outline: none;
 }
 
 button {
-    background-color: #003366; /* Dark blue */
+    background-color: #3e2723; /* Dark brown button */
     color: white;
     border: none;
     padding: 12px 20px;
@@ -169,7 +173,7 @@ button {
 }
 
 button:hover {
-    background-color: #002244; /* Darker blue on hover */
+    background-color: #4e3629; /* Lighter brown on hover */
 }
 
 .service-list {
@@ -192,18 +196,18 @@ button:hover {
 }
 
 .service-card h3 {
-    color: #003366; /* Dark blue */
+    color: #3e2723; /* Dark brown */
     margin-bottom: 10px;
 }
 
 .service-card p {
-    color: #4b3c2d; /* Dark brown text */
+    color: #4e3629; /* Slightly lighter coffee brown */
     margin-bottom: 10px;
 }
 
 .cta-btn {
     display: inline-block;
-    background-color: #003366; /* Dark blue */
+    background-color: #3e2723; /* Dark brown */
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
@@ -213,7 +217,7 @@ button:hover {
 }
 
 .cta-btn:hover {
-    background-color: #002244; /* Darker blue on hover */
+    background-color: #4e3629; /* Lighter brown on hover */
 }
 
 p {

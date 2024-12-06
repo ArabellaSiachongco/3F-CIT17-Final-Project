@@ -49,25 +49,32 @@ $stmt->close();
 </head>
 <style>
 /* General Styles */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Merriweather', serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #f7f4f0; /* Light coffee foam */
+    color: #4b3832; /* Dark roasted coffee */
+    line-height: 1.6;
 }
 
 /* Header */
 header {
-    background-color: #2c3e50;
-    color: white;
+    background-color: #6f4e37; /* Coffee brown */
+    color: #f7f4f0;
     padding: 20px 0;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
     font-size: 2.5em;
     margin: 0;
+    font-weight: 700;
 }
 
 header nav ul {
@@ -82,59 +89,66 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: white;
+    color: #f7f4f0;
     text-decoration: none;
     font-size: 1.1em;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #3498db;
+    color: #f0a500; /* Latte gold */
 }
 
 /* Hero Section */
 .hero {
     background: url('assets/hero-background.jpg') no-repeat center center/cover;
-    color: black;
-    padding: 80px 20px;
+    color: #f7f4f0;
+    padding: 100px 20px;
     text-align: center;
 }
 
 .hero-content h1 {
-    font-size: 3em;
+    font-size: 3.5em;
+    font-weight: 700;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .hero-content p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin-bottom: 30px;
 }
 
 .cta-btn {
-    background-color: #3498db;
-    color: white;
+    background-color: #a47c6d; /* Warm mocha */
+    color: #f7f4f0;
     padding: 15px 30px;
     text-decoration: none;
-    font-size: 1.1em;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    margin: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
 }
 
 .cta-btn:hover {
-    background-color: #2980b9;
+    background-color: #6f4e37;
+    transform: scale(1.1);
 }
 
 /* Promotions and Rewards Section */
 .promotions-rewards {
-    background-color: #fff;
-    padding: 40px 20px;
+    background-color: #fdfbf6; /* Coffee cream */
+    padding: 50px 20px;
     text-align: center;
+    border-top: 2px solid #a47c6d;
 }
 
 .promotions-rewards h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 20px;
+    color: #6f4e37;
 }
 
 .rewards-info ul {
@@ -143,80 +157,89 @@ header nav ul li a:hover {
 }
 
 .rewards-info li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 10px;
+    padding: 20px;
+    border-bottom: 1px dashed #a47c6d;
+    margin-bottom: 20px;
+    background: #f7f4f0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.rewards-info hr {
-    border: 1px solid #ddd;
-    margin: 20px 0;
+.rewards-info li:hover {
+    transform: translateY(-5px);
 }
 
 /* Testimonials Section */
 .testimonials {
-    background-color: #ecf0f1;
-    padding: 40px 20px;
+    background-color: #f4ede4; /* Latte cream */
+    padding: 50px 20px;
     text-align: center;
+    border-top: 2px solid #6f4e37;
 }
 
 .testimonials h2 {
     font-size: 2.5em;
     margin-bottom: 30px;
+    color: #6f4e37;
 }
 
 .testimonial-slider {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    overflow: hidden;
+    gap: 30px;
+    overflow: auto;
+    padding: 20px 0;
 }
 
 .testimonial-card {
-    background-color: white;
+    background-color: #fff8f0; /* Light foam */
     padding: 20px;
     border-radius: 8px;
-    width: 300px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
 .testimonial-photo {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .testimonial-rating {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin-bottom: 10px;
+    color: #f0a500;
 }
 
 .testimonial-comment {
     font-style: italic;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #4b3832;
 }
 
 .testimonial-author {
     font-weight: bold;
+    color: #6f4e37;
 }
 
 /* Footer */
 footer {
-    background-color: #2c3e50;
-    color: white;
+    background-color: #6f4e37;
+    color: #f7f4f0;
     text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 15px 0;
+    font-size: 1em;
+    border-top: 3px solid #a47c6d;
 }
 
 /* Responsive Design */
@@ -236,7 +259,7 @@ footer {
     }
 
     .testimonial-card {
-        width: 80%;
+        width: 90%;
     }
 }
 </style>
